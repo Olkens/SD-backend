@@ -13,6 +13,11 @@ class ProductRestController(private val service: ProductService) {
         return service.findProducts()
     }
 
+    @GetMapping("/{id}")
+    fun getProductById(@PathVariable id: Long): Product {
+        return service.getProductById(id)
+    }
+
     @PostMapping("/add")
     fun saveProduct(@RequestBody product: Product): Product {
         service.saveProduct(product)
@@ -24,4 +29,8 @@ class ProductRestController(private val service: ProductService) {
         val updatedProduct = service.updateProduct(id, productBody)
         return updatedProduct
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseBody
+    fun deleteProduct(@PathVariable id: Long) = service.deleteProduct(id)
 }

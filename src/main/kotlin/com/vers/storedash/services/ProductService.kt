@@ -25,4 +25,13 @@ class ProductService(private val productRepository: ProductRepository) {
         )
         productRepository.save(newProduct)
     }
+
+    fun deleteProduct(id: Long) {
+        val productToDelete = productRepository.findById(id).orElse(null)
+        productRepository.delete(productToDelete)
+    }
+
+    fun getProductById(id: Long): Product {
+        return productRepository.findById(id).orElse(null)
+    }
 }
