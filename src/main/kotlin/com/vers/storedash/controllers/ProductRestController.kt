@@ -1,6 +1,6 @@
 package com.vers.storedash.controllers
 
-import com.vers.storedash.entities.Product
+import com.vers.storedash.model.Product
 import com.vers.storedash.services.ProductService
 import org.springframework.web.bind.annotation.*
 

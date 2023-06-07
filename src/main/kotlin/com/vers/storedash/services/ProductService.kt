@@ -1,9 +1,8 @@
 package com.vers.storedash.services
 
-import com.vers.storedash.entities.Product
+import com.vers.storedash.model.Product
 import com.vers.storedash.repositories.ProductRepository
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service
 class ProductService(private val productRepository: ProductRepository) {
