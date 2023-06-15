@@ -2,10 +2,11 @@ package com.vers.storedash.services
 
 import com.vers.storedash.model.Product
 import com.vers.storedash.repositories.ProductRepository
+import com.vers.storedash.repositories.TagRepository
 import org.springframework.stereotype.Service
 
 @Service
-class ProductService(private val productRepository: ProductRepository) {
+class ProductService(private val productRepository: ProductRepository, private val tagRepository: TagRepository) {
     fun findProducts(): List<Product> = productRepository.findAll().toList()
 
     fun saveProduct(product: Product) {

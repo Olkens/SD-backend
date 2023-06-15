@@ -5,11 +5,13 @@ import com.vers.storedash.services.ProductService
 import org.springframework.web.bind.annotation.*
 
 @RestController
+@CrossOrigin
 @RequestMapping
 class ProductRestController(private val service: ProductService) {
 
     @GetMapping
-    fun message(): Collection<Product> {
+    @CrossOrigin
+    fun products(): Collection<Product> {
         return service.findProducts()
     }
 
