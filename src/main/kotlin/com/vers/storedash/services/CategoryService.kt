@@ -8,4 +8,8 @@ class CategoryService(private val repo: CategoryRepository) {
     fun saveCategory(category: Category) {
         repo.save(category)
     }
+
+    fun getAllCategories(): List<Category> {
+        return repo.findAll().toList()
+    }
 }

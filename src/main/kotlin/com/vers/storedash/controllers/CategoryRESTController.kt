@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @CrossOrigin
-@RequestMapping("/category")
+@RequestMapping("/api/category")
 class CategoryRESTController(private val service: CategoryService) {
+
+    @GetMapping
+    fun getAllCategories(): Collection<Category> {
+        return service.getAllCategories()
+    }
 
     @PostMapping("/add")
     fun saveCategory(@RequestBody category: Category): Category {
