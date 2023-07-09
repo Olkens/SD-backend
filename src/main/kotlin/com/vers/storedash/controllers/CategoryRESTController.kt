@@ -13,7 +13,6 @@ class CategoryRESTController(private val service: CategoryService) {
     fun getAllCategories(): Collection<Category> {
         return service.getAllCategories()
     }
-
     @PostMapping("/add")
     fun saveCategory(@RequestBody category: Category): Category {
         service.saveCategory(category)

@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @CrossOrigin
-@RequestMapping
+@RequestMapping("/api/products")
 class ProductRestController(private val service: ProductService) {
 
     @GetMapping
     @CrossOrigin
-    fun products(): Collection<Product> {
+    fun getAllProducts(): Collection<Product> {
         return service.findProducts()
     }
 
