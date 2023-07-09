@@ -6,9 +6,9 @@ import jakarta.persistence.*
 @Entity
 @Table(name = "category")
 data class Category(
-    @Column(nullable = true)
+    @Column
     val name: String,
-    @Column(nullable = true)
+    @Column
     val color: String = "#FFFFFF",
     @ManyToMany
     @JsonIgnore
