@@ -2,7 +2,6 @@ package com.vers.storedash.controllers
 
 import com.vers.storedash.model.Category
 import com.vers.storedash.services.CategoryService
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -11,9 +10,9 @@ import org.springframework.web.bind.annotation.*
 class CategoryRESTController(private val service: CategoryService) {
 
     @GetMapping
-    fun getAllCategories(): Collection<Category> = service.getAllCategories()
-
-
+    fun getAllCategories(): Collection<Category> {
+        return service.getAllCategories()
+    }
     @PostMapping("/add")
     fun saveCategory(@RequestBody category: Category): Category {
         service.saveCategory(category)
