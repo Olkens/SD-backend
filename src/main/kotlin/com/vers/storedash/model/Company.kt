@@ -11,7 +11,7 @@ import jakarta.persistence.Table
 data class Company(
     @Column
     val name: String,
-    @OneToMany
+    @OneToMany(mappedBy = "company")
     @Column(nullable = true)
     var shop: Collection<Shop>?,
 ):BaseEntity()

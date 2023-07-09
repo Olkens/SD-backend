@@ -10,7 +10,6 @@ import jakarta.persistence.Table
 data class Shop(
     @Column
     val name: String,
-    @OneToMany
     @Column
     val company: Company
 
