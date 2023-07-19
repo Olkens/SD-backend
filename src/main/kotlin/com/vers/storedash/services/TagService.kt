@@ -16,7 +16,7 @@ class TagService(private val tagRepository: TagRepository, private val productSe
     }
 
     fun findAllTagIdsInProduct(product: Product): List<Tag>? {
-        val foundProduct: Product? = product?.id?.let { productService.getProductById(it) }
+        val foundProduct: Product? = product.id?.let { productService.getProductById(it) }
         return foundProduct?.tags
     }
 }

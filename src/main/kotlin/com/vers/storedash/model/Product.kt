@@ -16,5 +16,8 @@ data class Product(
     val description: String,
     @Column(nullable = true)
     @ManyToMany(fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
-    val tags: List<Tag>?
+    val tags: List<Tag>?,
+    @ManyToOne
+    @JoinColumn(name="shop_id", nullable=false)
+    val shop: Shop
 ) : BaseEntity()
