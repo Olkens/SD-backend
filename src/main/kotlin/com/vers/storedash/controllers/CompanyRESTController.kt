@@ -4,6 +4,7 @@ import com.vers.storedash.model.Company
 import com.vers.storedash.services.CompanyService
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -14,4 +15,7 @@ class CompanyRESTController(private val service: CompanyService) {
 
     @GetMapping
     fun getCompanies(): List<Company> = service.findAllCompanies()
+
+    @GetMapping("/{id}")
+    fun getCompany(@PathVariable id: Long): Company = service.getCompany(id)
 }
