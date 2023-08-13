@@ -10,6 +10,7 @@ import java.util.*
 open class BaseEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     var id: Long? = null,
 
     @CreationTimestamp
