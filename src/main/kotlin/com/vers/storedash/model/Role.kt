@@ -12,7 +12,6 @@ data class Role(
     val name: String,
     @Column
     val enabled: Boolean,
-    @Column
     @OneToOne(mappedBy = "role")
     val user: Person
 ):BaseEntity()
